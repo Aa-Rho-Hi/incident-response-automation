@@ -1,0 +1,23 @@
+
+hec:
+  url: "https://splunk.example:8088"
+  token: "CHANGE_ME"
+  verify_ssl: false
+paths:
+  input_dir: "data/input"
+  outbox: "data/outbox"
+sources:
+  enabled:
+    windows_evt: true
+    linux_auth: true
+    firewall: true
+    edr: true
+    dns: true
+    proxy: true
+    cloudtrail: true
+    vulnscan: true
+normalize:
+  sourcetype_prefix: "ir:"
+batch:
+  size: 500
+  flush_seconds: 2
